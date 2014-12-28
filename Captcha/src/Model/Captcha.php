@@ -58,7 +58,7 @@ class Captcha extends AbstractModel
             }
         }
 
-        $this->text = $token['value'];
+        $this->token = $token;
         return $this;
     }
 
@@ -96,7 +96,7 @@ class Captcha extends AbstractModel
             $textY = round($this->height - (($this->height - $this->size) / 2) + ((int)$this->rotate / 2));
         }
         $image->type()->xy($textX, $textY)
-                      ->text($this->text);
+                      ->text($this->token['text']);
 
         $this->image = $image;
 
