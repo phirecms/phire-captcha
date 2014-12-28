@@ -96,7 +96,7 @@ class Captcha extends AbstractModel
             $textY = round($this->height - (($this->height - $this->size) / 2) + ((int)$this->rotate / 2));
         }
         $image->type()->xy($textX, $textY)
-                      ->text($this->token['text']);
+                      ->text($this->token['value']);
 
         $this->image = $image;
 
