@@ -38,7 +38,7 @@ return [
         'events' => [
             [
                 'name'   => 'app.send',
-                'action' => 'Captcha\Model\Captcha::register'
+                'action' => 'Captcha\Model\Captcha::addCaptcha'
             ]
         ]
     ]

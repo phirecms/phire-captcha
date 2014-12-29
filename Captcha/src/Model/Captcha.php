@@ -110,11 +110,10 @@ class Captcha extends AbstractModel
      * @param  \Phire\Application                   $application
      * @return void
      */
-    public static function register(\Phire\Controller\AbstractController $controller, \Phire\Application $application)
+    public static function addCaptcha(\Phire\Controller\AbstractController $controller, \Phire\Application $application)
     {
-        $route = $application->router()->getRouteMatch()->getRoute();
-        if (($route == BASE_PATH . APP_URI . '/register') && (null !== $controller->view()->form) &&
-            (!is_string($controller->view()->form)) && (null !== $controller->view()->form->getElement('captcha'))) {
+        if ((null !== $controller->view()->form) && ($controller->view()->form instanceof \Pop\Form\Form) &&
+            (null !== $controller->view()->form->getElement('captcha'))) {
             $captcha = new self($application->module('Captcha')['config']);
             $captcha->createToken();
             $controller->view()->form->getElement('captcha')->setToken($captcha->token, 'Enter Code');
