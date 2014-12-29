@@ -34,6 +34,12 @@ return [
             'font'        => null,
             'size'        => 0,
             'rotate'      => 0
+        ],
+        'events' => [
+            [
+                'name'   => 'app.send',
+                'action' => 'Captcha\Model\Captcha::register'
+            ]
         ]
     ]
 ];

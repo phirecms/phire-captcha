@@ -18,8 +18,7 @@ class Captcha extends AbstractModel
      */
     public function createToken($reload = null)
     {
-        $sess = Session::getInstance();
-
+        $sess     = Session::getInstance();
         ob_start();
         include __DIR__ . '/../../../phire/view/captcha.phtml';
         $captcha = ob_get_clean();
@@ -101,6 +100,25 @@ class Captcha extends AbstractModel
         $this->image = $image;
 
         return $this;
+    }
+
+
+    /**
+     * Add CAPTCHA image for register form
+     *
+     * @param  \Phire\Controller\AbstractController $controller
+     * @param  \Phire\Application                   $application
+     * @return void
+     */
+    public static function register(\Phire\Controller\AbstractController $controller, \Phire\Application $application)
+    {
+        $route = $application->router()->getRouteMatch()->getRoute();
+        if (($route == BASE_PATH . APP_URI . '/register') && (null !== $controller->view()->form) &&
+            (!is_string($controller->view()->form)) && (null !== $controller->view()->form->getElement('captcha'))) {
+            $captcha = new self($application->module('Captcha')['config']);
+            $captcha->createToken();
+            $controller->view()->form->getElement('captcha')->setToken($captcha->token, 'Enter Code');
+        }
     }
 
 }
