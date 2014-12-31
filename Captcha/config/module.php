@@ -12,7 +12,7 @@ return [
         'routes'     => [
             '/captcha[/]' => [
                 'controller' => 'Captcha\Controller\IndexController',
-                'action'     => 'index',
+                'action'     => 'captcha',
             ]
         ],
         'install' => function() {

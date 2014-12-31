@@ -9,11 +9,11 @@ class IndexController extends AbstractController
 {
 
     /**
-     * Index action method
+     * Captcha action method
      *
      * @return void
      */
-    public function index()
+    public function captcha()
     {
         $captcha = new Model\Captcha($this->application->module('Captcha')['config']);
         $captcha->createToken($this->request->getQuery('reload'))
