@@ -1,5 +1,5 @@
 <?php
-$reloadLang = [
+$reloadLangAry = [
     'ar' => 'تحديث',
     'de' => 'Neu Laden',
     'el' => 'Ανανέωση',
@@ -13,9 +13,9 @@ $reloadLang = [
     'ru' => 'Перезагружать',
     'zh' => '刷新'
 ];
-$reload = (isset($_GET['lang']) && isset($reloadLang[$_GET['lang']])) ? $reloadLang[$_GET['lang']] : $reloadLang['en'];
+$reloadLang = (isset($_GET['lang']) && isset($reloadLangAry[$_GET['lang']])) ? $reloadLangAry[$_GET['lang']] : $reloadLangAry['en'];
 ?>
 <br />
 <img id="captcha-image" class="captcha-image" src="<?=BASE_PATH; ?>/captcha" />
 <br />
-<a class="captcha-reload" href="#" onclick="document.getElementById('captcha-image').src = '<?=BASE_PATH; ?>/captcha?reload=1'; return false;"><?=$reload; ?></a>
+<a class="captcha-reload" href="#" onclick="document.getElementById('captcha-image').src = '<?=BASE_PATH; ?>/captcha?reload=1'; return false;"><?=$reloadLang; ?></a>
