@@ -15,8 +15,14 @@ return [
                 'action'     => 'captcha',
             ]
         ],
-        'install'    => 'Captcha\Event\Captcha::install',
-        'uninstall'  => 'Captcha\Event\Captcha::uninstall',
+        'install' => function() {
+            copy(__DIR__ . '/../view/captcha.phtml', __DIR__ . '/../../phire/view/captcha.phtml');
+        },
+        'uninstall' => function() {
+            if (file_exists(__DIR__ . '/../../phire/view/captcha.phtml')) {
+                unlink(__DIR__ . '/../../phire/view/captcha.phtml');
+            }
+        },
         'config'     => [
             'expire'      => 300,
             'length'      => 4,

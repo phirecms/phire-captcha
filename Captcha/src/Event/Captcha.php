@@ -22,22 +22,4 @@ class Captcha
         }
     }
 
-    /**
-     * Install method
-     */
-    public static function install()
-    {
-        copy(__DIR__ . '/../../view/captcha.phtml', __DIR__ . '/../../../phire/view/captcha.phtml');
-    }
-
-    /**
-     * Uninstall method
-     */
-    public static function uninstall()
-    {
-        if (file_exists(__DIR__ . '/../../../phire/view/captcha.phtml')) {
-            unlink(__DIR__ . '/../../../phire/view/captcha.phtml');
-        }
-    }
-
 }
