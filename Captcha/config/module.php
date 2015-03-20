@@ -15,14 +15,8 @@ return [
                 'action'     => 'captcha',
             ]
         ],
-        'install' => function() {
-            copy(__DIR__ . '/../view/captcha.phtml', __DIR__ . '/../../phire/view/captcha.phtml');
-        },
-        'uninstall' => function() {
-            if (file_exists(__DIR__ . '/../../phire/view/captcha.phtml')) {
-                unlink(__DIR__ . '/../../phire/view/captcha.phtml');
-            }
-        },
+        'install'    => 'Captcha\Event\Captcha::install',
+        'uninstall'  => 'Captcha\Event\Captcha::uninstall',
         'config'     => [
             'expire'      => 300,
             'length'      => 4,
@@ -38,7 +32,7 @@ return [
         'events' => [
             [
                 'name'   => 'app.send',
-                'action' => 'Captcha\Model\Captcha::addCaptcha'
+                'action' => 'Captcha\Event\Captcha::addCaptcha'
             ]
         ]
     ]
