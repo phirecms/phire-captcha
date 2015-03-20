@@ -2,17 +2,20 @@
 
 namespace Captcha\Event;
 
+use Phire\Controller\AbstractController;
+use Pop\Application;
+
 class Captcha
 {
 
     /**
      * Add CAPTCHA image for register form
      *
-     * @param  \Phire\Controller\AbstractController $controller
-     * @param  \Phire\Application                   $application
+     * @param  AbstractController $controller
+     * @param  Application        $application
      * @return void
      */
-    public static function addCaptcha(\Phire\Controller\AbstractController $controller, \Phire\Application $application)
+    public static function addCaptcha(AbstractController $controller, Application $application)
     {
         if (($controller->hasView()) && (null !== $controller->view()->form) &&
             ($controller->view()->form instanceof \Pop\Form\Form) && (null !== $controller->view()->form->getElement('captcha'))) {
