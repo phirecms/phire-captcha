@@ -19,7 +19,7 @@ class Captcha
     {
         if (($controller->hasView()) && (null !== $controller->view()->form) &&
             ($controller->view()->form instanceof \Pop\Form\Form) && (null !== $controller->view()->form->getElement('captcha'))) {
-            $captcha = new self($application->module('Captcha')['config']);
+            $captcha = new \Captcha\Model\Captcha($application->module('Captcha')['config']);
             $captcha->createToken();
             $controller->view()->form->getElement('captcha')->setToken($captcha->token, 'Enter Code');
         }
