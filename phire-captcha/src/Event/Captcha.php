@@ -1,6 +1,6 @@
 <?php
 
-namespace Captcha\Event;
+namespace Phire\Captcha\Event;
 
 use Phire\Controller\AbstractController;
 use Pop\Application;
@@ -19,7 +19,7 @@ class Captcha
     {
         if (($controller->hasView()) && (null !== $controller->view()->form) &&
             ($controller->view()->form instanceof \Pop\Form\Form) && (null !== $controller->view()->form->getElement('captcha'))) {
-            $captcha = new \Captcha\Model\Captcha($application->module('Captcha')['config']);
+            $captcha = new \Phire\Captcha\Model\Captcha($application->module('phire-captcha')['config']);
             $captcha->createToken();
             $controller->view()->form->getElement('captcha')->setToken($captcha->token, 'Enter Code');
         }

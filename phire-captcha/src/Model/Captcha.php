@@ -1,6 +1,6 @@
 <?php
 
-namespace Captcha\Model;
+namespace Phire\Captcha\Model;
 
 use Phire\Model\AbstractModel;
 use Pop\Filter\Random;

@@ -1,8 +1,8 @@
 <?php
 
-namespace Captcha\Controller;
+namespace Phire\Captcha\Controller;
 
-use Captcha\Model;
+use Phire\Captcha\Model;
 use Phire\Controller\AbstractController;
 
 class IndexController extends AbstractController
@@ -15,7 +15,7 @@ class IndexController extends AbstractController
      */
     public function captcha()
     {
-        $captcha = new Model\Captcha($this->application->module('Captcha')['config']);
+        $captcha = new Model\Captcha($this->application->module('phire-captcha')['config']);
         $captcha->createToken($this->request->getQuery('reload'))
                 ->createImage();
 

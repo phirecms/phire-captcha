@@ -1,17 +1,17 @@
 <?php
 /**
- * Module Name: Captcha
+ * Module Name: phire-captcha
  * Author: Nick Sagona
  * Description: This is the CAPTCHA module for Phire CMS 2
  * Version: 1.0
  */
 return [
-    'Captcha' => [
-        'prefix'     => 'Captcha\\',
+    'phire-captcha' => [
+        'prefix'     => 'Phire\Captcha\\',
         'src'        => __DIR__ . '/../src',
         'routes'     => [
             '/captcha[/]' => [
-                'controller' => 'Captcha\Controller\IndexController',
+                'controller' => 'Phire\Captcha\Controller\IndexController',
                 'action'     => 'captcha',
             ]
         ],
@@ -38,7 +38,7 @@ return [
         'events' => [
             [
                 'name'   => 'app.send',
-                'action' => 'Captcha\Event\Captcha::addCaptcha'
+                'action' => 'Phire\Captcha\Event\Captcha::addCaptcha'
             ]
         ]
     ]
