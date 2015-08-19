@@ -11,6 +11,34 @@ class Captcha extends AbstractModel
 {
 
     /**
+     * Constructor
+     *
+     * Instantiate a model object
+     *
+     * @param  array $data
+     * @return Captcha
+     */
+    public function __construct(array $data = [])
+    {
+        $this->data = $data;
+
+        if (count($this->data) == 0) {
+            $this->data = [
+                'expire'      => 300,
+                'length'      => 4,
+                'width'       => 71,
+                'height'      => 26,
+                'lineSpacing' => 5,
+                'lineColor'   => [175, 175, 175],
+                'textColor'   => [0, 0, 0],
+                'font'        => null,
+                'size'        => 0,
+                'rotate'      => 0
+            ];
+        }
+    }
+
+    /**
      * Create CAPTCHA token
      *
      * @param  int $reload
