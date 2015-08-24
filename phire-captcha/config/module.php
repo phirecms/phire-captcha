@@ -37,7 +37,7 @@ return [
         ],
         'events' => [
             [
-                'name'   => 'app.send',
+                'name'   => 'app.send.pre',
                 'action' => 'Phire\Captcha\Event\Captcha::addCaptcha'
             ]
         ]
