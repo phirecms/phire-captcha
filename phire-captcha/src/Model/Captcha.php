@@ -46,7 +46,8 @@ class Captcha extends AbstractModel
      */
     public function createToken($reload = null)
     {
-        $sess     = Session::getInstance();
+        $sess = Session::getInstance();
+
         ob_start();
         include __DIR__ . '/../../../phire/view/captcha.phtml';
         $captcha = ob_get_clean();

@@ -9,7 +9,7 @@ class Captcha
 {
 
     /**
-     * Add CAPTCHA image for register form
+     * Add CAPTCHA image to form with a CAPTCHA field
      *
      * @param  AbstractController $controller
      * @param  Application        $application
