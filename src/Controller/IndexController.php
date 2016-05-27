@@ -1,10 +1,31 @@
 <?php
+/**
+ * Phire Captcha Module
+ *
+ * @link       https://github.com/phirecms/phire-captcha
+ * @author     Nick Sagona, III <dev@nolainteractive.com>
+ * @copyright  Copyright (c) 2009-2016 NOLA Interactive, LLC. (http://www.nolainteractive.com)
+ * @license    http://www.phirecms.org/license     New BSD License
+ */
 
+/**
+ * @namespace
+ */
 namespace Phire\Captcha\Controller;
 
 use Phire\Captcha\Model;
 use Phire\Controller\AbstractController;
 
+/**
+ * Captcha Index Controller class
+ *
+ * @category   Phire\Captcha
+ * @package    Phire\Captcha
+ * @author     Nick Sagona, III <dev@nolainteractive.com>
+ * @copyright  Copyright (c) 2009-2016 NOLA Interactive, LLC. (http://www.nolainteractive.com)
+ * @license    http://www.phirecms.org/license     New BSD License
+ * @version    1.0.0
+ */
 class IndexController extends AbstractController
 {
 

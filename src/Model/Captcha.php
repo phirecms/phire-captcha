@@ -1,5 +1,16 @@
 <?php
+/**
+ * Phire Captcha Module
+ *
+ * @link       https://github.com/phirecms/phire-captcha
+ * @author     Nick Sagona, III <dev@nolainteractive.com>
+ * @copyright  Copyright (c) 2009-2016 NOLA Interactive, LLC. (http://www.nolainteractive.com)
+ * @license    http://www.phirecms.org/license     New BSD License
+ */
 
+/**
+ * @namespace
+ */
 namespace Phire\Captcha\Model;
 
 use Phire\Model\AbstractModel;
@@ -7,6 +18,16 @@ use Pop\Filter\Random;
 use Pop\Image\Gd;
 use Pop\Web\Session;
 
+/**
+ * Captcha Model class
+ *
+ * @category   Phire\Captcha
+ * @package    Phire\Captcha
+ * @author     Nick Sagona, III <dev@nolainteractive.com>
+ * @copyright  Copyright (c) 2009-2016 NOLA Interactive, LLC. (http://www.nolainteractive.com)
+ * @license    http://www.phirecms.org/license     New BSD License
+ * @version    1.0.0
+ */
 class Captcha extends AbstractModel
 {
 
