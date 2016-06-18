@@ -38,7 +38,7 @@ class Captcha
      */
     public static function addCaptcha(AbstractController $controller, Application $application)
     {
-        if (($controller->hasView()) && (null !== $controller->view()->form) &&
+        if (($controller->hasView()) && (null !== $controller->view()->form) && ($controller->view()->form !== false) &&
             ($controller->view()->form instanceof \Pop\Form\Form) && (null !== $controller->view()->form->getElement('captcha'))) {
             $captcha = new \Phire\Captcha\Model\Captcha($application->module('phire-captcha')['config']);
             $captcha->createToken();
