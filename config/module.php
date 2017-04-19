@@ -16,11 +16,11 @@ return [
             ]
         ],
         'install' => function() {
-            copy(__DIR__ . '/../view/captcha.phtml', __DIR__ . '/../../phire/view/captcha.phtml');
+            copy(__DIR__ . '/../view/captcha.phtml', __DIR__ . '/../../../phire/view/captcha.phtml');
         },
         'uninstall' => function() {
-            if (file_exists(__DIR__ . '/../../phire/view/captcha.phtml')) {
-                unlink(__DIR__ . '/../../phire/view/captcha.phtml');
+            if (file_exists(__DIR__ . '/../../../phire/view/captcha.phtml')) {
+                unlink(__DIR__ . '/../../../phire/view/captcha.phtml');
             }
         },
         'config'     => [

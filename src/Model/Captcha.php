@@ -70,7 +70,7 @@ class Captcha extends AbstractModel
         $sess = Session::getInstance();
 
         ob_start();
-        include __DIR__ . '/../../../phire/view/captcha.phtml';
+        include __DIR__ . '/../../../../phire/view/captcha.phtml';
         $captcha = ob_get_clean();
 
         // If reload, or captcha token doesn't exist, create new one
